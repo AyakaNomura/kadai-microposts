@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'MicropostsController@index');
+
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
 });
 
 //Login
