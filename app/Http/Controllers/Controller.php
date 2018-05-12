@@ -18,6 +18,8 @@ abstract class Controller extends BaseController
         
         return[
             'count_microposts' => $count_microposts,
+            'count_followings' => $count_followings,
+            'count_followers' => $count_followers,
             ];
     }
 }
