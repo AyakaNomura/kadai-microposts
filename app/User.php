@@ -41,7 +41,7 @@ class User extends Authenticatable
     
     public function follow($userId){
         // 既にフォローしているかの確認
-        $exist = $this->is_following('user_id');
+        $exist = $this->is_following($userId);
         // 自分自身ではないかの確認
         $its_me = $this->id == $userId;
         
